@@ -76,21 +76,41 @@ public class Force extends FreeColSpecObject {
     public Force(Specification specification, List<AbstractUnit> units,
                  String ability) {
         this(specification);
-        for (AbstractUnit unit : units) {
-            UnitType unitType = unit.getType(specification);
-            if (ability == null || unitType.hasAbility(ability)) {
-                if (unitType.hasAbility(Ability.NAVAL_UNIT)) {
-                    navalUnits.add(unit);
-                } else {
-                    landUnits.add(unit);
-                }
-            } else {
-                logger.warning("Found unit lacking required ability \""
-                    + ability + "\": " + unit);
-            }
-        }
+        absractrefac(specification, units, ability);
         updateSpaceAndCapacity();
     }
+
+	private void absractrefac(Specification specification,
+			List<AbstractUnit> units, String ability) {
+		for (AbstractUnit unit : units) {
+            UnitType unitType = unit.getType(specification);
+            unittyperefact(ability, unit, unitType);
+        }
+	}
+
+	private void unittyperefact(String ability, AbstractUnit unit,
+			UnitType unitType) {
+		unitabilityrefac(ability, unit, unitType);
+	}
+
+	private void unitabilityrefac(String ability, AbstractUnit unit,
+			UnitType unitType) {
+		hasabilityrefact(ability, unit, unitType);
+	}
+
+	private void hasabilityrefact(String ability, AbstractUnit unit,
+			UnitType unitType) {
+		if (ability == null || unitType.hasAbility(ability)) {
+		    if (unitType.hasAbility(Ability.NAVAL_UNIT)) {
+		        navalUnits.add(unit);
+		    } else {
+		        landUnits.add(unit);
+		    }
+		} else {
+		    logger.warning("Found unit lacking required ability \""
+		        + ability + "\": " + unit);
+		}
+	}
 
 
     /**
@@ -115,13 +135,21 @@ public class Force extends FreeColSpecObject {
      * Update the space and capacity variables.
      */
     public final void updateSpaceAndCapacity() {
-        final Specification spec = getSpecification();
-        this.capacity = sum(this.navalUnits,
+        getSpecrefac();
+    }
+
+	private void getSpecrefac() {
+		final Specification spec = getSpecification();
+        getspeccapnspacrefac(spec);
+	}
+
+	private void getspeccapnspacrefac(final Specification spec) {
+		this.capacity = sum(this.navalUnits,
             nu -> nu.getType(spec).canCarryUnits(),
             nu -> nu.getType(spec).getSpace() * nu.getNumber());
         this.spaceRequired = sum(this.landUnits,
             lu -> lu.getType(spec).getSpaceTaken() * lu.getNumber());
-    }
+	}
 
     /**
      * Gets all units.
@@ -171,7 +199,23 @@ public class Force extends FreeColSpecObject {
         final UnitType unitType = au.getType(spec);
         final int n = au.getNumber();
         boolean added = false;
-        if (unitType.hasAbility(Ability.NAVAL_UNIT)) {
+        hasAbility2refac(au, spec, unitType, n, added);
+    }
+
+	private void hasAbility2refac(AbstractUnit au, final Specification spec,
+			final UnitType unitType, final int n, boolean added) {
+		abstractunit3refac(au, spec, unitType, n, added);
+        updateSpaceAndCapacity();
+	}
+
+	private void abstractunit3refac(AbstractUnit au, final Specification spec,
+			final UnitType unitType, final int n, boolean added) {
+		hasAbility4(au, spec, unitType, n, added);
+	}
+
+	private void hasAbility4(AbstractUnit au, final Specification spec,
+			final UnitType unitType, final int n, boolean added) {
+		if (unitType.hasAbility(Ability.NAVAL_UNIT)) {
             for (AbstractUnit refUnit : navalUnits) {
                 if (spec.getUnitType(refUnit.getId()) == unitType) {
                     refUnit.setNumber(refUnit.getNumber() + n);
@@ -195,8 +239,7 @@ public class Force extends FreeColSpecObject {
             }
             if (!added) this.landUnits.add(au);
         }
-        updateSpaceAndCapacity();
-    }
+	}
 
     /**
      * Calculate the approximate offence power of this force.
@@ -274,21 +317,36 @@ public class Force extends FreeColSpecObject {
         landUnits.clear();
 
         while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
-            final String tag = xr.getLocalName();
-
-            if (LAND_UNITS_TAG.equals(tag)) {
-                while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
-                    add(new AbstractUnit(xr));
-                }
-            } else if (NAVAL_UNITS_TAG.equals(tag)) {
-                while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
-                    add(new AbstractUnit(xr));
-                }
-            } else {
-                logger.warning("Bogus Force tag: " + tag);
-            }
+            freeColXMLRevfac(xr);
         }
     }
+
+	private void freeColXMLRevfac(FreeColXMLReader xr)
+			throws XMLStreamException {
+		final String tag = xr.getLocalName();
+
+		freeColandStrinrefac(xr, tag);
+	}
+
+	private void freeColandStrinrefac(FreeColXMLReader xr, final String tag)
+			throws XMLStreamException {
+		landUnittagrefac(xr, tag);
+	}
+
+	private void landUnittagrefac(FreeColXMLReader xr, final String tag)
+			throws XMLStreamException {
+		if (LAND_UNITS_TAG.equals(tag)) {
+		    while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
+		        add(new AbstractUnit(xr));
+		    }
+		} else if (NAVAL_UNITS_TAG.equals(tag)) {
+		    while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
+		        add(new AbstractUnit(xr));
+		    }
+		} else {
+		    logger.warning("Bogus Force tag: " + tag);
+		}
+	}
 
     /**
      * {@inheritDoc}
