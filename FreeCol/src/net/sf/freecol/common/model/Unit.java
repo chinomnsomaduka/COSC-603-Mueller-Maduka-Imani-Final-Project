@@ -25,7 +25,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.logging.Logger;
@@ -324,7 +323,6 @@ public class Unit extends GoodsLocation implements Consumer, Locatable,
 					extra = StringTemplate.template("goldAmount").addAmount(
 							"%amount%", getTreasureAmount());
 				} else {
-					boolean noEquipment = false;
 					// unequipped expert has no-equipment label
 					List<Role> expertRoles = type.getExpertRoles();
 					for (Role someRole : expertRoles) {
@@ -2187,7 +2185,7 @@ public class Unit extends GoodsLocation implements Consumer, Locatable,
 	 *            The target <code>Tile</code> of the move.
 	 * @return The move type.
 	 */
-	private MoveType getNavalMoveType(@SuppressWarnings("unused") Tile from,
+	private MoveType getNavalMoveType(Tile from,
 			Tile target) {
 		if (target == null) {
 			return (getOwner().canMoveToEurope()) ? MoveType.MOVE_HIGH_SEAS
@@ -4482,7 +4480,6 @@ public class Unit extends GoodsLocation implements Consumer, Locatable,
 		if (xr.shouldIntern())
 			game.checkOwners(this, oldOwner);
 
-		UnitType oldUnitType = unitType;
 		unitType = xr.getType(spec, UNIT_TYPE_TAG, UnitType.class,
 				(UnitType) null);
 
