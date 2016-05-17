@@ -26,13 +26,19 @@ import java.util.List;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /** 
  * Simple container to define where and what a unit is working on.
  */
 public class Occupation {
 
+    /** The work location. */
     public WorkLocation workLocation;
+    
+    /** The production type. */
     public ProductionType productionType;
+    
+    /** The work type. */
     public GoodsType workType;
 
 
@@ -89,7 +95,15 @@ public class Occupation {
 
         lb.add(" alone=", alone);
         List<ProductionType> productionTypes = new ArrayList<>();
-        if (alone) {
+        bestAmount = unitTyperefac(unitType, wl, bestAmount, workTypes, alone,
+				lb, productionTypes);
+        return bestAmount;   
+    }
+
+	private int unitTyperefac(UnitType unitType, WorkLocation wl,
+			int bestAmount, Collection<GoodsType> workTypes, boolean alone,
+			LogBuilder lb, List<ProductionType> productionTypes) {
+		if (alone) {
             productionTypes.addAll(wl.getAvailableProductionTypes(false));
         } else {
             productionTypes.add(wl.getProductionType());
@@ -97,7 +111,47 @@ public class Occupation {
 
         // Try the available production types for the best production.
         final Colony colony = wl.getColony();
-        for (ProductionType pt : productionTypes) {
+        bestAmount = unitType(unitType, wl, bestAmount, workTypes, lb,
+				productionTypes, colony);
+		return bestAmount;
+	}
+
+	private int unitType(UnitType unitType, WorkLocation wl, int bestAmount,
+			Collection<GoodsType> workTypes, LogBuilder lb,
+			List<ProductionType> productionTypes, final Colony colony) {
+		bestAmount = unitType2(unitType, wl, bestAmount, workTypes, lb,
+				productionTypes, colony);
+		return bestAmount;
+	}
+
+	private int unitType2(UnitType unitType, WorkLocation wl, int bestAmount,
+			Collection<GoodsType> workTypes, LogBuilder lb,
+			List<ProductionType> productionTypes, final Colony colony) {
+		bestAmount = unitType3(unitType, wl, bestAmount, workTypes, lb,
+				productionTypes, colony);
+		return bestAmount;
+	}
+
+	private int unitType3(UnitType unitType, WorkLocation wl, int bestAmount,
+			Collection<GoodsType> workTypes, LogBuilder lb,
+			List<ProductionType> productionTypes, final Colony colony) {
+		bestAmount = unitType4refac(unitType, wl, bestAmount, workTypes, lb,
+				productionTypes, colony);
+		return bestAmount;
+	}
+
+	private int unitType4refac(UnitType unitType, WorkLocation wl,
+			int bestAmount, Collection<GoodsType> workTypes, LogBuilder lb,
+			List<ProductionType> productionTypes, final Colony colony) {
+		bestAmount = unitTyperefac5(unitType, wl, bestAmount, workTypes, lb,
+				productionTypes, colony);
+		return bestAmount;
+	}
+
+	private int unitTyperefac5(UnitType unitType, WorkLocation wl,
+			int bestAmount, Collection<GoodsType> workTypes, LogBuilder lb,
+			List<ProductionType> productionTypes, final Colony colony) {
+		for (ProductionType pt : productionTypes) {
             lb.add("\n      try=", pt);
             if (pt != null) {
                 for (GoodsType gt : workTypes) {
@@ -122,8 +176,8 @@ public class Occupation {
                 }
             }
         }
-        return bestAmount;   
-    }
+		return bestAmount;
+	}
 
     /**
      * Improve this occupation to the best available production for the

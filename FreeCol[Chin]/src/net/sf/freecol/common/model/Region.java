@@ -33,11 +33,13 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A named region on the map.
  */
 public class Region extends FreeColGameObject implements Nameable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Region.class.getName());
 
     /** The keys for the valid predefined regions. */
@@ -54,15 +56,29 @@ public class Region extends FreeColGameObject implements Nameable {
 
     /** The type of region. */
     public static enum RegionType implements Named {
+        
+        /** The ocean. */
         OCEAN(false),
+        
+        /** The coast. */
         COAST(false),
+        
+        /** The lake. */
         LAKE(false),
+        
+        /** The river. */
         RIVER(true),
+        
+        /** The land. */
         LAND(true),
+        
+        /** The mountain. */
         MOUNTAIN(true),
+        
+        /** The desert. */
         DESERT(true);
 
-        /** Are regions of this type claimable by default? */
+        /**  Are regions of this type claimable by default?. */
         private final boolean claimable;
 
 
@@ -76,7 +92,8 @@ public class Region extends FreeColGameObject implements Nameable {
         }
         
 
-        /** Is this region claimable by default?
+        /**
+         *  Is this region claimable by default?.
          *
          * @return True if this region type is normally claimable.
          */
@@ -191,7 +208,7 @@ public class Region extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Does this region have a name?
+     * Does this region have a name?.
      *
      * @return True if the region has been named or was predefined.
      */
@@ -282,7 +299,7 @@ public class Region extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this a leaf region?
+     * Is this a leaf region?.
      *
      * @return True if the region has no children.
      */
@@ -291,7 +308,7 @@ public class Region extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Can this region be claimed?
+     * Can this region be claimed?.
      *
      * @return True if the region can be claimed.
      */
@@ -309,7 +326,7 @@ public class Region extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Can this region be discovered?
+     * Can this region be discovered?.
      *
      * @return True if the region can be discovered.
      */
@@ -478,16 +495,37 @@ public class Region extends FreeColGameObject implements Nameable {
 
     // Serialization
 
+    /** The Constant CHILD_TAG. */
     private static final String CHILD_TAG = "child";
+    
+    /** The Constant CLAIMABLE_TAG. */
     private static final String CLAIMABLE_TAG = "claimable";
+    
+    /** The Constant DISCOVERABLE_TAG. */
     private static final String DISCOVERABLE_TAG = "discoverable";
+    
+    /** The Constant DISCOVERED_BY_TAG. */
     private static final String DISCOVERED_BY_TAG = "discoveredBy";
+    
+    /** The Constant DISCOVERED_IN_TAG. */
     private static final String DISCOVERED_IN_TAG = "discoveredIn";
+    
+    /** The Constant KEY_TAG. */
     private static final String KEY_TAG = "key";
+    
+    /** The Constant NAME_TAG. */
     private static final String NAME_TAG = "name";
+    
+    /** The Constant PARENT_TAG. */
     private static final String PARENT_TAG = "parent";
+    
+    /** The Constant SCORE_VALUE_TAG. */
     private static final String SCORE_VALUE_TAG = "scoreValue";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant NAME_KEY_TAG. */
     // @compat 0.11.3
     private static final String NAME_KEY_TAG = "nameKey";
     // end @compat 0.11.3
@@ -616,15 +654,255 @@ public class Region extends FreeColGameObject implements Nameable {
      */
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder(32);
+        StringBuilder sb = stringbuild1refac();
+        return sb.toString();
+    }
+
+	/**
+	 * Stringbuild1refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuild1refac() {
+		StringBuilder sb = stringbuilder2refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder2refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder2refac() {
+		StringBuilder sb = stringbuilder3refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder3refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder3refac() {
+		StringBuilder sb = stringbuilder4refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder4refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder4refac() {
+		StringBuilder sb = stringbuilder5refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder5refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder5refac() {
+		StringBuilder sb = stringbuilder6refac();
+        sb.append("]");
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder6refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder6refac() {
+		StringBuilder sb = stringbuilder7refac();
+        if (getDiscoverable()) sb.append("!");
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder7refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder7refac() {
+		StringBuilder sb = stringbuilder8refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder8refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder8refac() {
+		StringBuilder sb = stringbuilder9refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder9refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder9refac() {
+		StringBuilder sb = stringbuilder10refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder10refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder10refac() {
+		StringBuilder sb = stringbuiler9refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuiler9refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuiler9refac() {
+		StringBuilder sb = stringbuilder11refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder11refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder11refac() {
+		StringBuilder sb = stringbuiler12refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuiler12refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuiler12refac() {
+		StringBuilder sb = stringbuilder13refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder13refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder13refac() {
+		StringBuilder sb = stringbuilder14refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder14refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder14refac() {
+		StringBuilder sb = strigbuilder15refac();
+		return sb;
+	}
+
+	/**
+	 * Strigbuilder15refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder strigbuilder15refac() {
+		StringBuilder sb = stringbuilder15refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder15refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder15refac() {
+		StringBuilder sb = stringbuilder16refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder16refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder16refac() {
+		StringBuilder sb = stringbuilder18refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder18refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder18refac() {
+		StringBuilder sb = stringbuilder19refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder19refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder19refac() {
+		StringBuilder sb = stringbuilder20refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder20refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder20refac() {
+		StringBuilder sb = stringbuilder22refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder22refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder22refac() {
+		StringBuilder sb = stringbuilder23refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder23refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder23refac() {
+		StringBuilder sb = stringbuilder24refac();
+		return sb;
+	}
+
+	/**
+	 * Stringbuilder24refac.
+	 *
+	 * @return the string builder
+	 */
+	private StringBuilder stringbuilder24refac() {
+		StringBuilder sb = new StringBuilder(32);
         sb.append("[").append(getId())
             .append(" ").append((key != null) ? key : (name != null) ? name
                 : "<unnamed>")
             .append(" ").append(type);
-        if (getDiscoverable()) sb.append("!");
-        sb.append("]");
-        return sb.toString();
-    }
+		return sb;
+	}
 
     /**
      * {@inheritDoc}

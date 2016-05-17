@@ -37,6 +37,7 @@ import net.sf.freecol.common.model.UnitType;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A group of units with a common origin and purpose.
  */
@@ -80,6 +81,13 @@ public class Force extends FreeColSpecObject {
         updateSpaceAndCapacity();
     }
 
+	/**
+	 * Absractrefac.
+	 *
+	 * @param specification the specification
+	 * @param units the units
+	 * @param ability the ability
+	 */
 	private void absractrefac(Specification specification,
 			List<AbstractUnit> units, String ability) {
 		for (AbstractUnit unit : units) {
@@ -88,16 +96,37 @@ public class Force extends FreeColSpecObject {
         }
 	}
 
+	/**
+	 * Unittyperefact.
+	 *
+	 * @param ability the ability
+	 * @param unit the unit
+	 * @param unitType the unit type
+	 */
 	private void unittyperefact(String ability, AbstractUnit unit,
 			UnitType unitType) {
 		unitabilityrefac(ability, unit, unitType);
 	}
 
+	/**
+	 * Unitabilityrefac.
+	 *
+	 * @param ability the ability
+	 * @param unit the unit
+	 * @param unitType the unit type
+	 */
 	private void unitabilityrefac(String ability, AbstractUnit unit,
 			UnitType unitType) {
 		hasabilityrefact(ability, unit, unitType);
 	}
 
+	/**
+	 * Hasabilityrefact.
+	 *
+	 * @param ability the ability
+	 * @param unit the unit
+	 * @param unitType the unit type
+	 */
 	private void hasabilityrefact(String ability, AbstractUnit unit,
 			UnitType unitType) {
 		if (ability == null || unitType.hasAbility(ability)) {
@@ -138,11 +167,22 @@ public class Force extends FreeColSpecObject {
         getSpecrefac();
     }
 
+	/**
+	 * Gets the specrefac.
+	 *
+	 * @return the specrefac
+	 */
 	private void getSpecrefac() {
 		final Specification spec = getSpecification();
         getspeccapnspacrefac(spec);
 	}
 
+	/**
+	 * Gets the speccapnspacrefac.
+	 *
+	 * @param spec the spec
+	 * @return the speccapnspacrefac
+	 */
 	private void getspeccapnspacrefac(final Specification spec) {
 		this.capacity = sum(this.navalUnits,
             nu -> nu.getType(spec).canCarryUnits(),
@@ -181,7 +221,7 @@ public class Force extends FreeColSpecObject {
     }
 
     /**
-     * Is this Force empty?
+     * Is this Force empty?.
      *
      * @return True if there are no land or naval units.
      */
@@ -202,17 +242,44 @@ public class Force extends FreeColSpecObject {
         hasAbility2refac(au, spec, unitType, n, added);
     }
 
+	/**
+	 * Checks for ability2refac.
+	 *
+	 * @param au the au
+	 * @param spec the spec
+	 * @param unitType the unit type
+	 * @param n the n
+	 * @param added the added
+	 */
 	private void hasAbility2refac(AbstractUnit au, final Specification spec,
 			final UnitType unitType, final int n, boolean added) {
 		abstractunit3refac(au, spec, unitType, n, added);
         updateSpaceAndCapacity();
 	}
 
+	/**
+	 * Abstractunit3refac.
+	 *
+	 * @param au the au
+	 * @param spec the spec
+	 * @param unitType the unit type
+	 * @param n the n
+	 * @param added the added
+	 */
 	private void abstractunit3refac(AbstractUnit au, final Specification spec,
 			final UnitType unitType, final int n, boolean added) {
 		hasAbility4(au, spec, unitType, n, added);
 	}
 
+	/**
+	 * Checks for ability4.
+	 *
+	 * @param au the au
+	 * @param spec the spec
+	 * @param unitType the unit type
+	 * @param n the n
+	 * @param added the added
+	 */
 	private void hasAbility4(AbstractUnit au, final Specification spec,
 			final UnitType unitType, final int n, boolean added) {
 		if (unitType.hasAbility(Ability.NAVAL_UNIT)) {
@@ -253,6 +320,9 @@ public class Force extends FreeColSpecObject {
             (naval) ? this.navalUnits : this.landUnits);
     }
 
+    /**
+     * Fix old ref roles.
+     */
     // @compat 0.10.x
     public void fixOldREFRoles() {
         Iterator<AbstractUnit> aui = landUnits.iterator();
@@ -278,7 +348,10 @@ public class Force extends FreeColSpecObject {
                     
     // Serialization
 
+    /** The Constant LAND_UNITS_TAG. */
     public static final String LAND_UNITS_TAG = "landUnits";
+    
+    /** The Constant NAVAL_UNITS_TAG. */
     public static final String NAVAL_UNITS_TAG = "navalUnits";
     // @compat 0.10.5
     // public for now, revert to private
@@ -321,6 +394,12 @@ public class Force extends FreeColSpecObject {
         }
     }
 
+	/**
+	 * Free col xml revfac.
+	 *
+	 * @param xr the xr
+	 * @throws XMLStreamException the XML stream exception
+	 */
 	private void freeColXMLRevfac(FreeColXMLReader xr)
 			throws XMLStreamException {
 		final String tag = xr.getLocalName();
@@ -328,11 +407,25 @@ public class Force extends FreeColSpecObject {
 		freeColandStrinrefac(xr, tag);
 	}
 
+	/**
+	 * Free coland strinrefac.
+	 *
+	 * @param xr the xr
+	 * @param tag the tag
+	 * @throws XMLStreamException the XML stream exception
+	 */
 	private void freeColandStrinrefac(FreeColXMLReader xr, final String tag)
 			throws XMLStreamException {
 		landUnittagrefac(xr, tag);
 	}
 
+	/**
+	 * Land unittagrefac.
+	 *
+	 * @param xr the xr
+	 * @param tag the tag
+	 * @throws XMLStreamException the XML stream exception
+	 */
 	private void landUnittagrefac(FreeColXMLReader xr, final String tag)
 			throws XMLStreamException {
 		if (LAND_UNITS_TAG.equals(tag)) {
