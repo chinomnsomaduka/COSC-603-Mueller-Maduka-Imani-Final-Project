@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LimitTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestAll (6) (May 17, 2016 2:04:14 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeColTest</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">LimitTest.java</span></div><h1>LimitTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import java.io.BufferedInputStream;
+import java.io.CharArrayWriter;
+import java.io.InputStream;
+import java.io.PipedInputStream;
+import java.io.Writer;
+import net.sf.freecol.common.io.FreeColXMLWriter;
+import javax.xml.stream.XMLStreamException;
+import net.sf.freecol.common.io.FreeColXMLReader;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+/**
+ * The class &lt;code&gt;LimitTest&lt;/code&gt; contains tests for the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/16/16 11:11 PM
+ * @author jeek
+ * @version $Revision: 1.0 $
+ */
+<span class="fc" id="L21">public class LimitTest {</span>
+	/**
+	 * Run the Limit(Specification) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testLimit_1()
+		throws Exception {
+<span class="fc" id="L32">		Specification specification = new Specification();</span>
+
+<span class="fc" id="L34">		Limit result = new Limit(specification);</span>
+
+		// add additional test code here
+<span class="fc" id="L37">		assertNotNull(result);</span>
+<span class="fc" id="L38">		assertEquals(&quot;null null null&quot;, result.toString());</span>
+<span class="fc" id="L39">		assertEquals(&quot;limit&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L40">		assertEquals(null, result.getOperator());</span>
+<span class="fc" id="L41">		assertEquals(null, result.getLeftHandSide());</span>
+<span class="fc" id="L42">		assertEquals(null, result.getRightHandSide());</span>
+<span class="fc" id="L43">		assertEquals(false, result.isAbstractType());</span>
+<span class="fc" id="L44">		assertEquals(&quot;null.name&quot;, result.getNameKey());</span>
+<span class="fc" id="L45">		assertEquals(&quot;null.description&quot;, result.getDescriptionKey());</span>
+<span class="fc" id="L46">		assertEquals(null, result.getId());</span>
+<span class="fc" id="L47">		assertEquals(null, result.getSuffix());</span>
+<span class="fc" id="L48">		assertEquals(null, result.getIdType());</span>
+<span class="fc" id="L49">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L50">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L51">	}</span>
+
+	/**
+	 * Run the Limit(FreeColXMLReader,Specification) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testLimit_2()
+		throws Exception {
+<span class="nc" id="L63">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+<span class="nc" id="L64">		Specification specification = new Specification();</span>
+
+<span class="nc" id="L66">		Limit result = new Limit(xr, specification);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L72">		assertNotNull(result);</span>
+<span class="nc" id="L73">	}</span>
+
+	/**
+	 * Run the Limit(FreeColXMLReader,Specification) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testLimit_3()
+		throws Exception {
+<span class="nc" id="L85">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+<span class="nc" id="L86">		Specification specification = new Specification();</span>
+
+<span class="nc" id="L88">		Limit result = new Limit(xr, specification);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L94">		assertNotNull(result);</span>
+<span class="nc" id="L95">	}</span>
+
+	/**
+	 * Run the Limit(String,Operand,Operator,Operand) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testLimit_4()
+		throws Exception {
+<span class="fc" id="L107">		String id = &quot;&quot;;</span>
+<span class="fc" id="L108">		Operand lhs = new Operand();</span>
+<span class="fc" id="L109">		Limit.Operator op = Limit.Operator.EQ;</span>
+<span class="fc" id="L110">		Operand rhs = new Operand();</span>
+
+<span class="fc" id="L112">		Limit result = new Limit(id, lhs, op, rhs);</span>
+
+		// add additional test code here
+<span class="fc" id="L115">		assertNotNull(result);</span>
+<span class="fc" id="L116">		assertEquals(&quot;[Operand type=NONE scopeLevel=NONE null matches-null] EQ [Operand type=NONE scopeLevel=NONE null matches-null]&quot;, result.toString());</span>
+<span class="fc" id="L117">		assertEquals(&quot;limit&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L118">		assertEquals(false, result.isAbstractType());</span>
+<span class="fc" id="L119">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="fc" id="L120">		assertEquals(&quot;.description&quot;, result.getDescriptionKey());</span>
+<span class="fc" id="L121">		assertEquals(null, result.getSpecification());</span>
+<span class="fc" id="L122">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="fc" id="L123">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="fc" id="L124">		assertEquals(&quot;&lt;limit id=\&quot;\&quot; operator=\&quot;eq\&quot;&gt;&lt;left-hand-side match-negated=\&quot;false\&quot; matches-null=\&quot;true\&quot; operand-type=\&quot;none\&quot; scope-level=\&quot;none\&quot;&gt;&lt;/left-hand-side&gt;&lt;right-hand-side match-negated=\&quot;false\&quot; matches-null=\&quot;true\&quot; operand-type=\&quot;none\&quot; scope-level=\&quot;none\&quot;&gt;&lt;/right-hand-side&gt;&lt;/limit&gt;&quot;, result.serialize());</span>
+<span class="fc" id="L125">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="fc" id="L126">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L127">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L128">	}</span>
+
+	/**
+	 * Run the boolean appliesTo(FreeColObject) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testAppliesTo_1()
+		throws Exception {
+<span class="fc" id="L140">		Limit fixture = LimitFactory.createLimit7();</span>
+<span class="fc" id="L141">		FreeColObject object = new AbstractGoods();</span>
+
+<span class="fc" id="L143">		boolean result = fixture.appliesTo(object);</span>
+
+		// add additional test code here
+<span class="fc" id="L146">		assertEquals(true, result);</span>
+<span class="fc" id="L147">	}</span>
+
+	/**
+	 * Run the boolean appliesTo(FreeColObject) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testAppliesTo_2()
+		throws Exception {
+<span class="fc" id="L159">		Limit fixture = LimitFactory.createLimit();</span>
+<span class="fc" id="L160">		FreeColObject object = new AbstractGoods();</span>
+
+<span class="fc" id="L162">		boolean result = fixture.appliesTo(object);</span>
+
+		// add additional test code here
+<span class="fc" id="L165">		assertEquals(true, result);</span>
+<span class="fc" id="L166">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Game) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_1()
+		throws Exception {
+<span class="fc" id="L178">		Limit fixture = LimitFactory.createLimit2();</span>
+<span class="fc" id="L179">		Game game = GameFactory.createGame();</span>
+
+<span class="fc" id="L181">		boolean result = fixture.evaluate(game);</span>
+
+		// add additional test code here
+<span class="fc" id="L184">		assertEquals(true, result);</span>
+<span class="fc" id="L185">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Game) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_2()
+		throws Exception {
+<span class="fc" id="L197">		Limit fixture = LimitFactory.createLimit3();</span>
+<span class="fc" id="L198">		Game game = GameFactory.createGame2();</span>
+
+<span class="fc" id="L200">		boolean result = fixture.evaluate(game);</span>
+
+		// add additional test code here
+<span class="fc" id="L203">		assertEquals(false, result);</span>
+<span class="fc" id="L204">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Player) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_3()
+		throws Exception {
+<span class="nc" id="L216">		Limit fixture = LimitFactory.createLimit4();</span>
+<span class="nc" id="L217">		Player player = PlayerFactory.createPlayer();</span>
+
+<span class="nc" id="L219">		boolean result = fixture.evaluate(player);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit4(LimitFactory.java:65)
+<span class="nc" id="L227">		assertTrue(result);</span>
+<span class="nc" id="L228">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Player) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_4()
+		throws Exception {
+<span class="nc" id="L240">		Limit fixture = LimitFactory.createLimit5();</span>
+<span class="nc" id="L241">		Player player = PlayerFactory.createPlayer2();</span>
+
+<span class="nc" id="L243">		boolean result = fixture.evaluate(player);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: Load specification stream error
+		//       at net.sf.freecol.common.model.Specification.load(Specification.java:378)
+		//       at net.sf.freecol.common.model.Specification.&lt;init&gt;(Specification.java:360)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit5(LimitFactory.java:76)
+<span class="nc" id="L251">		assertTrue(result);</span>
+<span class="nc" id="L252">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Player) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_5()
+		throws Exception {
+<span class="fc" id="L264">		Limit fixture = LimitFactory.createLimit6();</span>
+<span class="nc" id="L265">		Player player = PlayerFactory.createPlayer3();</span>
+
+<span class="nc" id="L267">		boolean result = fixture.evaluate(player);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: XML failure
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:824)
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:778)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:450)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer3(PlayerFactory.java:51)
+<span class="nc" id="L276">		assertTrue(result);</span>
+<span class="nc" id="L277">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Settlement) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_6()
+		throws Exception {
+<span class="fc" id="L289">		Limit fixture = LimitFactory.createLimit7();</span>
+<span class="nc" id="L290">		Settlement settlement = new Colony(GameFactory.createGame(), &quot;&quot;);</span>
+
+<span class="nc" id="L292">		boolean result = fixture.evaluate(settlement);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.UnitLocation.&lt;init&gt;(UnitLocation.java:149)
+		//       at net.sf.freecol.common.model.GoodsLocation.&lt;init&gt;(GoodsLocation.java:66)
+		//       at net.sf.freecol.common.model.Settlement.&lt;init&gt;(Settlement.java:96)
+		//       at net.sf.freecol.common.model.Colony.&lt;init&gt;(Colony.java:171)
+<span class="nc" id="L304">		assertTrue(result);</span>
+<span class="nc" id="L305">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Settlement) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_7()
+		throws Exception {
+<span class="fc" id="L317">		Limit fixture = LimitFactory.createLimit();</span>
+<span class="nc" id="L318">		Colony settlement = new Colony(GameFactory.createGame2(), &quot;&quot;);</span>
+<span class="nc" id="L319">		settlement.owner = PlayerFactory.createPlayer4();</span>
+
+<span class="nc" id="L321">		boolean result = fixture.evaluate(settlement);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.UnitLocation.&lt;init&gt;(UnitLocation.java:149)
+		//       at net.sf.freecol.common.model.GoodsLocation.&lt;init&gt;(GoodsLocation.java:66)
+		//       at net.sf.freecol.common.model.Settlement.&lt;init&gt;(Settlement.java:96)
+		//       at net.sf.freecol.common.model.Colony.&lt;init&gt;(Colony.java:171)
+<span class="nc" id="L333">		assertTrue(result);</span>
+<span class="nc" id="L334">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Settlement) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_8()
+		throws Exception {
+<span class="fc" id="L346">		Limit fixture = LimitFactory.createLimit2();</span>
+<span class="nc" id="L347">		Settlement settlement = new Colony(GameFactory.createGame(), &quot;&quot;);</span>
+
+<span class="nc" id="L349">		boolean result = fixture.evaluate(settlement);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.UnitLocation.&lt;init&gt;(UnitLocation.java:149)
+		//       at net.sf.freecol.common.model.GoodsLocation.&lt;init&gt;(GoodsLocation.java:66)
+		//       at net.sf.freecol.common.model.Settlement.&lt;init&gt;(Settlement.java:96)
+		//       at net.sf.freecol.common.model.Colony.&lt;init&gt;(Colony.java:171)
+<span class="nc" id="L361">		assertTrue(result);</span>
+<span class="nc" id="L362">	}</span>
+
+	/**
+	 * Run the boolean evaluate(Settlement) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testEvaluate_9()
+		throws Exception {
+<span class="fc" id="L374">		Limit fixture = LimitFactory.createLimit3();</span>
+<span class="nc" id="L375">		Settlement settlement = new Colony(GameFactory.createGame2(), &quot;&quot;);</span>
+
+<span class="nc" id="L377">		boolean result = fixture.evaluate(settlement);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.UnitLocation.&lt;init&gt;(UnitLocation.java:149)
+		//       at net.sf.freecol.common.model.GoodsLocation.&lt;init&gt;(GoodsLocation.java:66)
+		//       at net.sf.freecol.common.model.Settlement.&lt;init&gt;(Settlement.java:96)
+		//       at net.sf.freecol.common.model.Colony.&lt;init&gt;(Colony.java:171)
+<span class="nc" id="L389">		assertTrue(result);</span>
+<span class="nc" id="L390">	}</span>
+
+	/**
+	 * Run the Operand getLeftHandSide() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testGetLeftHandSide_1()
+		throws Exception {
+<span class="fc" id="L402">		Limit fixture = LimitFactory.createLimit3();</span>
+
+<span class="fc" id="L404">		Operand result = fixture.getLeftHandSide();</span>
+
+		// add additional test code here
+<span class="fc" id="L407">		assertNotNull(result);</span>
+<span class="fc" id="L408">		assertEquals(&quot;[Operand type=BUILDINGS scopeLevel=GAME null matches-null]&quot;, result.toString());</span>
+<span class="fc" id="L409">		assertEquals(null, result.getValue());</span>
+<span class="fc" id="L410">		assertEquals(null, result.getKey());</span>
+<span class="fc" id="L411">		assertEquals(null, result.getType());</span>
+<span class="fc" id="L412">		assertEquals(null, result.getMethodName());</span>
+<span class="fc" id="L413">		assertEquals(&quot;scope&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L414">		assertEquals(null, result.getAbilityId());</span>
+<span class="fc" id="L415">		assertEquals(null, result.getMethodValue());</span>
+<span class="fc" id="L416">		assertEquals(true, result.isMatchesNull());</span>
+<span class="fc" id="L417">		assertEquals(false, result.isMatchNegated());</span>
+<span class="fc" id="L418">		assertEquals(true, result.getAbilityValue());</span>
+<span class="fc" id="L419">		assertEquals(null, result.getId());</span>
+<span class="fc" id="L420">		assertEquals(null, result.getSuffix());</span>
+<span class="fc" id="L421">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="fc" id="L422">		assertEquals(&quot;&lt;scope match-negated=\&quot;false\&quot; matches-null=\&quot;true\&quot; operand-type=\&quot;buildings\&quot; scope-level=\&quot;game\&quot;&gt;&lt;/scope&gt;&quot;, result.serialize());</span>
+<span class="fc" id="L423">		assertEquals(null, result.getSpecification());</span>
+<span class="fc" id="L424">		assertEquals(null, result.getIdType());</span>
+<span class="fc" id="L425">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L426">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L427">	}</span>
+
+	/**
+	 * Run the Limit.Operator getOperator() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testGetOperator_1()
+		throws Exception {
+<span class="fc" id="L439">		Limit fixture = LimitFactory.createLimit();</span>
+
+<span class="fc" id="L441">		Limit.Operator result = fixture.getOperator();</span>
+
+		// add additional test code here
+<span class="fc" id="L444">		assertNotNull(result);</span>
+<span class="fc" id="L445">		assertEquals(&quot;EQ&quot;, result.name());</span>
+<span class="fc" id="L446">		assertEquals(&quot;EQ&quot;, result.toString());</span>
+<span class="fc" id="L447">		assertEquals(0, result.ordinal());</span>
+<span class="fc" id="L448">	}</span>
+
+	/**
+	 * Run the Operand getRightHandSide() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testGetRightHandSide_1()
+		throws Exception {
+<span class="nc" id="L460">		Limit fixture = LimitFactory.createLimit5();</span>
+
+<span class="nc" id="L462">		Operand result = fixture.getRightHandSide();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: Load specification stream error
+		//       at net.sf.freecol.common.model.Specification.load(Specification.java:378)
+		//       at net.sf.freecol.common.model.Specification.&lt;init&gt;(Specification.java:360)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit5(LimitFactory.java:76)
+<span class="nc" id="L470">		assertNotNull(result);</span>
+<span class="nc" id="L471">	}</span>
+
+	/**
+	 * Run the String getTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testGetTagName_1()
+		throws Exception {
+
+<span class="fc" id="L484">		String result = Limit.getTagName();</span>
+
+		// add additional test code here
+<span class="fc" id="L487">		assertEquals(&quot;limit&quot;, result);</span>
+<span class="fc" id="L488">	}</span>
+
+	/**
+	 * Run the String getXMLTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testGetXMLTagName_1()
+		throws Exception {
+<span class="nc" id="L500">		Limit fixture = LimitFactory.createLimit4();</span>
+
+<span class="nc" id="L502">		String result = fixture.getXMLTagName();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit4(LimitFactory.java:65)
+<span class="nc" id="L510">		assertNotNull(result);</span>
+<span class="nc" id="L511">	}</span>
+
+	/**
+	 * Run the boolean hasOperandType(OperandType) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testHasOperandType_1()
+		throws Exception {
+<span class="nc" id="L523">		Limit fixture = LimitFactory.createLimit4();</span>
+<span class="nc" id="L524">		Operand.OperandType type = Operand.OperandType.BUILDINGS;</span>
+
+<span class="nc" id="L526">		boolean result = fixture.hasOperandType(type);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit4(LimitFactory.java:65)
+<span class="nc" id="L534">		assertTrue(result);</span>
+<span class="nc" id="L535">	}</span>
+
+	/**
+	 * Run the boolean hasOperandType(OperandType) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testHasOperandType_2()
+		throws Exception {
+<span class="nc" id="L547">		Limit fixture = LimitFactory.createLimit5();</span>
+<span class="nc" id="L548">		Operand.OperandType type = Operand.OperandType.BUILDINGS;</span>
+
+<span class="nc" id="L550">		boolean result = fixture.hasOperandType(type);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: Load specification stream error
+		//       at net.sf.freecol.common.model.Specification.load(Specification.java:378)
+		//       at net.sf.freecol.common.model.Specification.&lt;init&gt;(Specification.java:360)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit5(LimitFactory.java:76)
+<span class="nc" id="L558">		assertTrue(result);</span>
+<span class="nc" id="L559">	}</span>
+
+	/**
+	 * Run the boolean hasOperandType(OperandType) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testHasOperandType_3()
+		throws Exception {
+<span class="fc" id="L571">		Limit fixture = LimitFactory.createLimit6();</span>
+<span class="fc" id="L572">		Operand.OperandType type = Operand.OperandType.BUILDINGS;</span>
+
+<span class="nc" id="L574">		boolean result = fixture.hasOperandType(type);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NullPointerException
+		//       at net.sf.freecol.common.model.Limit.hasOperandType(Limit.java:266)
+<span class="nc" id="L580">		assertTrue(result);</span>
+<span class="nc" id="L581">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadAttributes_1()
+		throws Exception {
+<span class="fc" id="L593">		Limit fixture = LimitFactory.createLimit7();</span>
+<span class="nc" id="L594">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L596">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L602">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadAttributes_2()
+		throws Exception {
+<span class="fc" id="L614">		Limit fixture = LimitFactory.createLimit();</span>
+<span class="nc" id="L615">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L617">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L623">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_1()
+		throws Exception {
+<span class="fc" id="L635">		Limit fixture = LimitFactory.createLimit2();</span>
+<span class="nc" id="L636">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L638">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L644">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_2()
+		throws Exception {
+<span class="fc" id="L656">		Limit fixture = LimitFactory.createLimit3();</span>
+<span class="nc" id="L657">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L659">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L665">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_3()
+		throws Exception {
+<span class="nc" id="L677">		Limit fixture = LimitFactory.createLimit4();</span>
+<span class="nc" id="L678">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L680">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit4(LimitFactory.java:65)
+<span class="nc" id="L688">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_4()
+		throws Exception {
+<span class="nc" id="L700">		Limit fixture = LimitFactory.createLimit5();</span>
+<span class="nc" id="L701">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L703">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: Load specification stream error
+		//       at net.sf.freecol.common.model.Specification.load(Specification.java:378)
+		//       at net.sf.freecol.common.model.Specification.&lt;init&gt;(Specification.java:360)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit5(LimitFactory.java:76)
+<span class="nc" id="L711">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_5()
+		throws Exception {
+<span class="fc" id="L723">		Limit fixture = LimitFactory.createLimit6();</span>
+<span class="nc" id="L724">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L726">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L732">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_6()
+		throws Exception {
+<span class="fc" id="L744">		Limit fixture = LimitFactory.createLimit7();</span>
+<span class="nc" id="L745">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L747">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L753">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_7()
+		throws Exception {
+<span class="fc" id="L765">		Limit fixture = LimitFactory.createLimit();</span>
+<span class="nc" id="L766">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L768">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L774">	}</span>
+
+	/**
+	 * Run the void readChild(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testReadChild_8()
+		throws Exception {
+<span class="fc" id="L786">		Limit fixture = LimitFactory.createLimit2();</span>
+<span class="nc" id="L787">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L789">		fixture.readChild(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L795">	}</span>
+
+	/**
+	 * Run the void setLeftHandSide(Operand) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testSetLeftHandSide_1()
+		throws Exception {
+<span class="nc" id="L807">		Limit fixture = LimitFactory.createLimit4();</span>
+<span class="nc" id="L808">		Operand newLeftHandSide = new Operand();</span>
+
+<span class="nc" id="L810">		fixture.setLeftHandSide(newLeftHandSide);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit4(LimitFactory.java:65)
+<span class="nc" id="L818">	}</span>
+
+	/**
+	 * Run the void setOperator(Operator) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testSetOperator_1()
+		throws Exception {
+<span class="fc" id="L830">		Limit fixture = LimitFactory.createLimit2();</span>
+<span class="fc" id="L831">		Limit.Operator newOperator = Limit.Operator.EQ;</span>
+
+<span class="fc" id="L833">		fixture.setOperator(newOperator);</span>
+
+		// add additional test code here
+<span class="fc" id="L836">	}</span>
+
+	/**
+	 * Run the void setRightHandSide(Operand) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testSetRightHandSide_1()
+		throws Exception {
+<span class="fc" id="L848">		Limit fixture = LimitFactory.createLimit6();</span>
+<span class="fc" id="L849">		Operand newRightHandSide = new Operand();</span>
+
+<span class="fc" id="L851">		fixture.setRightHandSide(newRightHandSide);</span>
+
+		// add additional test code here
+<span class="fc" id="L854">	}</span>
+
+	/**
+	 * Run the String toString() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testToString_1()
+		throws Exception {
+<span class="fc" id="L866">		Limit fixture = LimitFactory.createLimit3();</span>
+
+<span class="fc" id="L868">		String result = fixture.toString();</span>
+
+		// add additional test code here
+<span class="fc" id="L871">		assertEquals(&quot;[Operand type=BUILDINGS scopeLevel=GAME null matches-null] GT [Operand type=BUILDINGS scopeLevel=GAME null matches-null]&quot;, result);</span>
+<span class="fc" id="L872">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_1()
+		throws Exception {
+<span class="fc" id="L884">		Limit fixture = LimitFactory.createLimit7();</span>
+<span class="fc" id="L885">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L887">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L890">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_2()
+		throws Exception {
+<span class="fc" id="L902">		Limit fixture = LimitFactory.createLimit();</span>
+<span class="fc" id="L903">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L905">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L908">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_3()
+		throws Exception {
+<span class="fc" id="L920">		Limit fixture = LimitFactory.createLimit2();</span>
+<span class="fc" id="L921">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L923">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L926">	}</span>
+
+	/**
+	 * Run the void writeChildren(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testWriteChildren_1()
+		throws Exception {
+<span class="fc" id="L938">		Limit fixture = LimitFactory.createLimit3();</span>
+<span class="fc" id="L939">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="fc" id="L941">		fixture.writeChildren(xw);</span>
+
+		// add additional test code here
+<span class="fc" id="L944">	}</span>
+
+	/**
+	 * Run the void writeChildren(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testWriteChildren_2()
+		throws Exception {
+<span class="nc" id="L956">		Limit fixture = LimitFactory.createLimit4();</span>
+<span class="nc" id="L957">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L959">		fixture.writeChildren(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit4(LimitFactory.java:65)
+<span class="nc" id="L967">	}</span>
+
+	/**
+	 * Run the void writeChildren(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testWriteChildren_3()
+		throws Exception {
+<span class="nc" id="L979">		Limit fixture = LimitFactory.createLimit5();</span>
+<span class="nc" id="L980">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L982">		fixture.writeChildren(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: Load specification stream error
+		//       at net.sf.freecol.common.model.Specification.load(Specification.java:378)
+		//       at net.sf.freecol.common.model.Specification.&lt;init&gt;(Specification.java:360)
+		//       at net.sf.freecol.common.model.LimitFactory.createLimit5(LimitFactory.java:76)
+<span class="nc" id="L990">	}</span>
+
+	/**
+	 * Run the void writeChildren(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Test
+	public void testWriteChildren_4()
+		throws Exception {
+<span class="fc" id="L1002">		Limit fixture = LimitFactory.createLimit6();</span>
+<span class="fc" id="L1003">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1005">		fixture.writeChildren(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NullPointerException
+		//       at net.sf.freecol.common.model.Limit.writeChildren(Limit.java:319)
+<span class="nc" id="L1011">	}</span>
+
+	/**
+	 * Perform pre-test initialization.
+	 *
+	 * @throws Exception
+	 *         if the initialization fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@Before
+	public void setUp()
+		throws Exception {
+		// add additional set up code here
+<span class="fc" id="L1025">	}</span>
+
+	/**
+	 * Perform post-test clean-up.
+	 *
+	 * @throws Exception
+	 *         if the clean-up fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	@After
+	public void tearDown()
+		throws Exception {
+		// Add additional tear down code here
+<span class="fc" id="L1039">	}</span>
+
+	/**
+	 * Launch the test.
+	 *
+	 * @param args the command line arguments
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:11 PM
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L1049">		new org.junit.runner.JUnitCore().run(LimitTest.class);</span>
+<span class="nc" id="L1050">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TestAll (6) (May 17, 2016 2:04:14 AM)</div></body></html>

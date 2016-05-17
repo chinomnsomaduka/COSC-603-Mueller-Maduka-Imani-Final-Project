@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>PlayerFactory.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestAll (6) (May 17, 2016 2:04:14 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeColTest</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">PlayerFactory.java</span></div><h1>PlayerFactory.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import javax.imageio.metadata.IIOMetadataNode;
+import org.w3c.dom.Element;
+
+
+/**
+ * The class &lt;code&gt;PlayerFactory&lt;/code&gt; implements static methods that return instances of the class &lt;code&gt;{@link Player}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/16/16 10:05 PM
+ * @author jeek
+ * @version $Revision: 1.0 $
+ */
+public class PlayerFactory
+ {
+	/**
+	 * Prevent creation of instances of this class.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:05 PM
+	 */
+<span class="nc" id="L21">	private PlayerFactory() {</span>
+<span class="nc" id="L22">	}</span>
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Player}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:05 PM
+	 */
+	public static Player createPlayer() {
+<span class="nc" id="L31">		return new Player(new Game());</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Player}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:05 PM
+	 */
+	public static Player createPlayer2() {
+<span class="nc" id="L41">		return new Player(new Game(), &quot;&quot;);</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Player}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:05 PM
+	 */
+	public static Player createPlayer3() {
+<span class="nc" id="L51">		return new Player(new Game(), new IIOMetadataNode(&quot;&quot;));</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Player}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:05 PM
+	 */
+	public static Player createPlayer4() {
+<span class="fc" id="L61">		return new Player(new Game(new Specification()), &quot;0123456789&quot;);</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Player}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:05 PM
+	 */
+	public static Player createPlayer5() {
+<span class="nc" id="L71">		return new Player(new Game(new Specification()), new IIOMetadataNode());</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TestAll (6) (May 17, 2016 2:04:14 AM)</div></body></html>
