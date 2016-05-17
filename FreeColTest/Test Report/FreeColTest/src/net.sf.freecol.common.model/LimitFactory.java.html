@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LimitFactory.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestAll (6) (May 17, 2016 2:04:14 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeColTest</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">LimitFactory.java</span></div><h1>LimitFactory.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.InputStream;
+import net.sf.freecol.common.io.FreeColXMLReader;
+
+
+/**
+ * The class &lt;code&gt;LimitFactory&lt;/code&gt; implements static methods that return instances of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/16/16 10:37 PM
+ * @author jeek
+ * @version $Revision: 1.0 $
+ */
+public class LimitFactory
+ {
+	/**
+	 * Prevent creation of instances of this class.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+<span class="nc" id="L24">	private LimitFactory() {</span>
+<span class="nc" id="L25">	}</span>
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+	public static Limit createLimit() {
+<span class="fc" id="L34">		return new Limit(&quot;&quot;, new Operand(), Limit.Operator.EQ, new Operand());</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+	public static Limit createLimit2() {
+<span class="fc" id="L44">		return new Limit(&quot;0123456789&quot;, new Operand(0), Limit.Operator.GE, new Operand(0));</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+	public static Limit createLimit3() {
+<span class="fc" id="L54">		return new Limit(&quot;An??t-1.0.txt&quot;, new Operand(Operand.OperandType.BUILDINGS, Operand.ScopeLevel.GAME), Limit.Operator.GT, new Operand(Operand.OperandType.BUILDINGS, Operand.ScopeLevel.GAME));</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+	public static Limit createLimit4()
+		throws javax.xml.stream.XMLStreamException, java.io.IOException {
+<span class="nc" id="L65">		return new Limit(new FreeColXMLReader(File.createTempFile(&quot;&quot;, &quot;&quot;)), new Specification());</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+	public static Limit createLimit5()
+		throws javax.xml.stream.XMLStreamException, java.io.IOException {
+<span class="nc" id="L76">		return new Limit(new FreeColXMLReader(new BufferedInputStream(new ByteArrayInputStream(&quot;&quot;.getBytes()))), new Specification(new ByteArrayInputStream(&quot;&quot;.getBytes())));</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+	public static Limit createLimit6() {
+<span class="fc" id="L86">		return new Limit(new Specification());</span>
+	}
+
+
+	/**
+	 * Create an instance of the class &lt;code&gt;{@link Limit}&lt;/code&gt;.
+	 *
+	 * @generatedBy CodePro at 5/16/16 10:37 PM
+	 */
+	public static Limit createLimit7() {
+<span class="fc" id="L96">		return new Limit((String) null, new Operand(Operand.OperandType.FOUNDING_FATHERS, Operand.ScopeLevel.NONE), Limit.Operator.LE, new Operand(Operand.OperandType.FOUNDING_FATHERS, Operand.ScopeLevel.NONE));</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TestAll (6) (May 17, 2016 2:04:14 AM)</div></body></html>

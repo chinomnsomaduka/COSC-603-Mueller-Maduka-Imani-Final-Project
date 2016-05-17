@@ -84,7 +84,7 @@ public class Building extends WorkLocation
      * @return The building type.
      */
     public BuildingType getType() {
-        return buildingType;
+        return this.buildingType;
     }
 
     /**
@@ -101,17 +101,17 @@ public class Building extends WorkLocation
     private List<Unit> setType(final BuildingType newBuildingType) {
         // remove features from current type
         final Colony colony = getColony();
-        colony.removeFeatures(buildingType);
+        colony.removeFeatures(this.buildingType);
         List<Unit> eject = new ArrayList<>();
 
         if (newBuildingType != null) {
-            buildingType = newBuildingType;
+            this.buildingType = newBuildingType;
 
             // change default production type
             updateProductionType();
 
             // add new features and abilities from new type
-            colony.addFeatures(buildingType);
+            colony.addFeatures(this.buildingType);
 
             // Colonists which can't work here must be put outside
             eject.addAll(transform(getUnitList(),
@@ -438,8 +438,8 @@ public class Building extends WorkLocation
      */
     @Override
     public StringTemplate getLabel() {
-        return (buildingType == null) ? null
-            : StringTemplate.key(buildingType);
+        return (this.buildingType == null) ? null
+            : StringTemplate.key(this.buildingType);
     }
 
     /**
@@ -537,7 +537,7 @@ public class Building extends WorkLocation
      */
     @Override
     public List<ProductionType> getAvailableProductionTypes(boolean unattended) {
-        return (buildingType == null) ? Collections.<ProductionType>emptyList()
+        return (this.buildingType == null) ? Collections.<ProductionType>emptyList()
             : getType().getAvailableProductionTypes(unattended);
     }
 
@@ -621,7 +621,7 @@ public class Building extends WorkLocation
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
         super.writeAttributes(xw);
 
-        xw.writeAttribute(BUILDING_TYPE_TAG, buildingType);
+        xw.writeAttribute(BUILDING_TYPE_TAG, this.buildingType);
     }
 
     /**
@@ -633,7 +633,7 @@ public class Building extends WorkLocation
 
         final Specification spec = getSpecification();
 
-        buildingType = xr.getType(spec, BUILDING_TYPE_TAG,
+        this.buildingType = xr.getType(spec, BUILDING_TYPE_TAG,
                                   BuildingType.class, (BuildingType)null);
     }
 
@@ -644,8 +644,8 @@ public class Building extends WorkLocation
     public String toString() {
         StringBuilder sb = new StringBuilder(32);
         sb.append("[").append(getId())
-            .append(" ").append((buildingType == null) ? ""
-                : lastPart(buildingType.getId(), "."))
+            .append(" ").append((this.buildingType == null) ? ""
+                : lastPart(this.buildingType.getId(), "."))
             .append("/").append(getColony().getName())
             .append("]");
         return sb.toString();
@@ -655,7 +655,9 @@ public class Building extends WorkLocation
      * {@inheritDoc}
      */
     @Override
-    public String getXMLTagName() { return getTagName(); }
+    public String getXMLTagName() { 
+    	return getTagName(); 
+    	}
 
     /**
      * Gets the tag name of the root element representing this object.

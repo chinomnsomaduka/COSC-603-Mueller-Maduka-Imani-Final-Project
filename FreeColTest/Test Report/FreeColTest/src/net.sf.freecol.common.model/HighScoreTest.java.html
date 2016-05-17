@@ -1,0 +1,1833 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>HighScoreTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestAll (6) (May 17, 2016 2:04:14 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeColTest</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">HighScoreTest.java</span></div><h1>HighScoreTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import java.io.BufferedInputStream;
+import java.io.CharArrayWriter;
+import java.io.InputStream;
+import java.io.PipedInputStream;
+import java.io.Writer;
+import net.sf.freecol.common.io.FreeColXMLWriter;
+import net.sf.freecol.common.io.FreeColXMLReader;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+/**
+ * The class &lt;code&gt;HighScoreTest&lt;/code&gt; contains tests for the class &lt;code&gt;{@link HighScore}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/16/16 11:13 PM
+ * @author jeek
+ * @version $Revision: 1.0 $
+ */
+<span class="fc" id="L23">public class HighScoreTest {</span>
+	/**
+	 * Run the HighScore() constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testHighScore_1()
+		throws Exception {
+
+<span class="fc" id="L35">		HighScore result = new HighScore();</span>
+
+		// add additional test code here
+<span class="fc" id="L38">		assertNotNull(result);</span>
+<span class="fc" id="L39">		assertEquals(null, result.getDate());</span>
+<span class="fc" id="L40">		assertEquals(null, result.getLevel());</span>
+<span class="fc" id="L41">		assertEquals(0, result.getUnits());</span>
+<span class="fc" id="L42">		assertEquals(null, result.getDifficulty());</span>
+<span class="fc" id="L43">		assertEquals(null, result.getNewLandName());</span>
+<span class="fc" id="L44">		assertEquals(null, result.getNationName());</span>
+<span class="fc" id="L45">		assertEquals(0, result.getColonies());</span>
+<span class="fc" id="L46">		assertEquals(null, result.getNationId());</span>
+<span class="fc" id="L47">		assertEquals(null, result.getPlayerName());</span>
+<span class="fc" id="L48">		assertEquals(null, result.getNationTypeId());</span>
+<span class="fc" id="L49">		assertEquals(&quot;highScore&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L50">		assertEquals(&quot;null.name&quot;, result.getOldNationNameKey());</span>
+<span class="fc" id="L51">		assertEquals(0, result.getRetirementTurn());</span>
+<span class="fc" id="L52">		assertEquals(-1, result.getIndependenceTurn());</span>
+<span class="fc" id="L53">		assertEquals(0, result.getScore());</span>
+<span class="fc" id="L54">		assertEquals(&quot;net.sf.freecol.common.model.HighScore:null&quot;, result.toString());</span>
+<span class="fc" id="L55">		assertEquals(null, result.getId());</span>
+<span class="fc" id="L56">		assertEquals(null, result.getSuffix());</span>
+<span class="fc" id="L57">		assertEquals(null, result.getSpecification());</span>
+<span class="fc" id="L58">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L59">		assertEquals(null, result.getIdType());</span>
+<span class="fc" id="L60">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="fc" id="L61">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L62">	}</span>
+
+	/**
+	 * Run the HighScore(FreeColXMLReader) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testHighScore_2()
+		throws Exception {
+<span class="nc" id="L74">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L76">		HighScore result = new HighScore(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L82">		assertNotNull(result);</span>
+<span class="nc" id="L83">	}</span>
+
+	/**
+	 * Run the HighScore(FreeColXMLReader) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testHighScore_3()
+		throws Exception {
+<span class="nc" id="L95">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L97">		HighScore result = new HighScore(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L103">		assertNotNull(result);</span>
+<span class="nc" id="L104">	}</span>
+
+	/**
+	 * Run the HighScore(Player,Date) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testHighScore_4()
+		throws Exception {
+<span class="nc" id="L116">		Player player = PlayerFactory.createPlayer();</span>
+<span class="nc" id="L117">		Date theDate = new Date();</span>
+
+<span class="nc" id="L119">		HighScore result = new HighScore(player, theDate);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+<span class="nc" id="L128">		assertNotNull(result);</span>
+<span class="nc" id="L129">	}</span>
+
+	/**
+	 * Run the HighScore(Player,Date) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testHighScore_5()
+		throws Exception {
+<span class="nc" id="L141">		Player player = PlayerFactory.createPlayer2();</span>
+<span class="nc" id="L142">		Date theDate = new Date();</span>
+
+<span class="nc" id="L144">		HighScore result = new HighScore(player, theDate);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+<span class="nc" id="L154">		assertNotNull(result);</span>
+<span class="nc" id="L155">	}</span>
+
+	/**
+	 * Run the boolean checkHighScore(int,List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testCheckHighScore_1()
+		throws Exception {
+<span class="fc" id="L167">		int score = 1;</span>
+<span class="fc" id="L168">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L170">		boolean result = HighScore.checkHighScore(score, scores);</span>
+
+		// add additional test code here
+<span class="fc" id="L173">		assertEquals(true, result);</span>
+<span class="fc" id="L174">	}</span>
+
+	/**
+	 * Run the boolean checkHighScore(int,List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testCheckHighScore_2()
+		throws Exception {
+<span class="fc" id="L186">		int score = 1;</span>
+<span class="fc" id="L187">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L189">		boolean result = HighScore.checkHighScore(score, scores);</span>
+
+		// add additional test code here
+<span class="fc" id="L192">		assertEquals(true, result);</span>
+<span class="fc" id="L193">	}</span>
+
+	/**
+	 * Run the boolean checkHighScore(int,List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testCheckHighScore_3()
+		throws Exception {
+<span class="fc" id="L205">		int score = -1;</span>
+<span class="fc" id="L206">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L208">		boolean result = HighScore.checkHighScore(score, scores);</span>
+
+		// add additional test code here
+<span class="fc" id="L211">		assertEquals(false, result);</span>
+<span class="fc" id="L212">	}</span>
+
+	/**
+	 * Run the boolean checkHighScore(int,List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testCheckHighScore_4()
+		throws Exception {
+<span class="fc" id="L224">		int score = 1;</span>
+<span class="fc" id="L225">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L227">		boolean result = HighScore.checkHighScore(score, scores);</span>
+
+		// add additional test code here
+<span class="fc" id="L230">		assertEquals(true, result);</span>
+<span class="fc" id="L231">	}</span>
+
+	/**
+	 * Run the int compareTo(FreeColObject) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testCompareTo_1()
+		throws Exception {
+<span class="nc" id="L243">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L244">		FreeColObject other = new AbstractGoods();</span>
+
+<span class="nc" id="L246">		int result = fixture.compareTo(other);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L257">		assertEquals(0, result);</span>
+<span class="nc" id="L258">	}</span>
+
+	/**
+	 * Run the int compareTo(FreeColObject) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testCompareTo_2()
+		throws Exception {
+<span class="nc" id="L270">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L271">		FreeColObject other = HighScoreFactory.createHighScore();</span>
+
+<span class="nc" id="L273">		int result = fixture.compareTo(other);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L281">		assertEquals(0, result);</span>
+<span class="nc" id="L282">	}</span>
+
+	/**
+	 * Run the int getColonies() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetColonies_1()
+		throws Exception {
+<span class="fc" id="L294">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+
+<span class="fc" id="L296">		int result = fixture.getColonies();</span>
+
+		// add additional test code here
+<span class="fc" id="L299">		assertEquals(0, result);</span>
+<span class="fc" id="L300">	}</span>
+
+	/**
+	 * Run the Date getDate() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetDate_1()
+		throws Exception {
+<span class="nc" id="L312">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+
+<span class="nc" id="L314">		Date result = fixture.getDate();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L324">		assertNotNull(result);</span>
+<span class="nc" id="L325">	}</span>
+
+	/**
+	 * Run the String getDifficulty() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetDifficulty_1()
+		throws Exception {
+<span class="nc" id="L337">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+
+<span class="nc" id="L339">		String result = fixture.getDifficulty();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L350">		assertNotNull(result);</span>
+<span class="nc" id="L351">	}</span>
+
+	/**
+	 * Run the int getIndependenceTurn() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetIndependenceTurn_1()
+		throws Exception {
+<span class="fc" id="L363">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+
+<span class="fc" id="L365">		int result = fixture.getIndependenceTurn();</span>
+
+		// add additional test code here
+<span class="fc" id="L368">		assertEquals(-1, result);</span>
+<span class="fc" id="L369">	}</span>
+
+	/**
+	 * Run the HighScore.ScoreLevel getLevel() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetLevel_1()
+		throws Exception {
+<span class="nc" id="L381">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+
+<span class="nc" id="L383">		HighScore.ScoreLevel result = fixture.getLevel();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L394">		assertNotNull(result);</span>
+<span class="nc" id="L395">	}</span>
+
+	/**
+	 * Run the String getNationId() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetNationId_1()
+		throws Exception {
+<span class="nc" id="L407">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+
+<span class="nc" id="L409">		String result = fixture.getNationId();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L417">		assertNotNull(result);</span>
+<span class="nc" id="L418">	}</span>
+
+	/**
+	 * Run the String getNationName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetNationName_1()
+		throws Exception {
+<span class="fc" id="L430">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+
+<span class="fc" id="L432">		String result = fixture.getNationName();</span>
+
+		// add additional test code here
+<span class="fc" id="L435">		assertEquals(null, result);</span>
+<span class="fc" id="L436">	}</span>
+
+	/**
+	 * Run the String getNationTypeId() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetNationTypeId_1()
+		throws Exception {
+<span class="fc" id="L448">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+
+<span class="fc" id="L450">		String result = fixture.getNationTypeId();</span>
+
+		// add additional test code here
+<span class="fc" id="L453">		assertEquals(null, result);</span>
+<span class="fc" id="L454">	}</span>
+
+	/**
+	 * Run the String getNewLandName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetNewLandName_1()
+		throws Exception {
+<span class="nc" id="L466">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+
+<span class="nc" id="L468">		String result = fixture.getNewLandName();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L478">		assertNotNull(result);</span>
+<span class="nc" id="L479">	}</span>
+
+	/**
+	 * Run the String getOldNationNameKey() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetOldNationNameKey_1()
+		throws Exception {
+<span class="nc" id="L491">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+
+<span class="nc" id="L493">		String result = fixture.getOldNationNameKey();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L501">		assertNotNull(result);</span>
+<span class="nc" id="L502">	}</span>
+
+	/**
+	 * Run the String getPlayerName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetPlayerName_1()
+		throws Exception {
+<span class="nc" id="L514">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+
+<span class="nc" id="L516">		String result = fixture.getPlayerName();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L527">		assertNotNull(result);</span>
+<span class="nc" id="L528">	}</span>
+
+	/**
+	 * Run the int getRetirementTurn() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetRetirementTurn_1()
+		throws Exception {
+<span class="nc" id="L540">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+
+<span class="nc" id="L542">		int result = fixture.getRetirementTurn();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L552">		assertEquals(0, result);</span>
+<span class="nc" id="L553">	}</span>
+
+	/**
+	 * Run the int getScore() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetScore_1()
+		throws Exception {
+<span class="nc" id="L565">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+
+<span class="nc" id="L567">		int result = fixture.getScore();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L577">		assertEquals(0, result);</span>
+<span class="nc" id="L578">	}</span>
+
+	/**
+	 * Run the String getTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetTagName_1()
+		throws Exception {
+
+<span class="fc" id="L591">		String result = HighScore.getTagName();</span>
+
+		// add additional test code here
+<span class="fc" id="L594">		assertEquals(&quot;highScore&quot;, result);</span>
+<span class="fc" id="L595">	}</span>
+
+	/**
+	 * Run the int getUnits() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetUnits_1()
+		throws Exception {
+<span class="nc" id="L607">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+
+<span class="nc" id="L609">		int result = fixture.getUnits();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L617">		assertEquals(0, result);</span>
+<span class="nc" id="L618">	}</span>
+
+	/**
+	 * Run the String getXMLTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testGetXMLTagName_1()
+		throws Exception {
+<span class="nc" id="L630">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+
+<span class="nc" id="L632">		String result = fixture.getXMLTagName();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L642">		assertNotNull(result);</span>
+<span class="nc" id="L643">	}</span>
+
+	/**
+	 * Run the List&lt;HighScore&gt; loadHighScores() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testLoadHighScores_1()
+		throws Exception {
+
+<span class="fc" id="L656">		List&lt;HighScore&gt; result = HighScore.loadHighScores();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+<span class="fc" id="L664">		assertNotNull(result);</span>
+<span class="fc" id="L665">	}</span>
+
+	/**
+	 * Run the List&lt;HighScore&gt; loadHighScores() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testLoadHighScores_2()
+		throws Exception {
+
+<span class="fc" id="L678">		List&lt;HighScore&gt; result = HighScore.loadHighScores();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+<span class="fc" id="L686">		assertNotNull(result);</span>
+<span class="fc" id="L687">	}</span>
+
+	/**
+	 * Run the List&lt;HighScore&gt; loadHighScores() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testLoadHighScores_3()
+		throws Exception {
+
+<span class="fc" id="L700">		List&lt;HighScore&gt; result = HighScore.loadHighScores();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+<span class="fc" id="L708">		assertNotNull(result);</span>
+<span class="fc" id="L709">	}</span>
+
+	/**
+	 * Run the List&lt;HighScore&gt; loadHighScores() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testLoadHighScores_4()
+		throws Exception {
+
+<span class="fc" id="L722">		List&lt;HighScore&gt; result = HighScore.loadHighScores();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+<span class="fc" id="L730">		assertNotNull(result);</span>
+<span class="fc" id="L731">	}</span>
+
+	/**
+	 * Run the List&lt;HighScore&gt; loadHighScores() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testLoadHighScores_5()
+		throws Exception {
+
+<span class="fc" id="L744">		List&lt;HighScore&gt; result = HighScore.loadHighScores();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+<span class="fc" id="L752">		assertNotNull(result);</span>
+<span class="fc" id="L753">	}</span>
+
+	/**
+	 * Run the List&lt;HighScore&gt; loadHighScores() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testLoadHighScores_6()
+		throws Exception {
+
+<span class="fc" id="L766">		List&lt;HighScore&gt; result = HighScore.loadHighScores();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+<span class="fc" id="L774">		assertNotNull(result);</span>
+<span class="fc" id="L775">	}</span>
+
+	/**
+	 * Run the List&lt;HighScore&gt; loadHighScores() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testLoadHighScores_7()
+		throws Exception {
+
+<span class="fc" id="L788">		List&lt;HighScore&gt; result = HighScore.loadHighScores();</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+<span class="fc" id="L796">		assertNotNull(result);</span>
+<span class="fc" id="L797">	}</span>
+
+	/**
+	 * Run the boolean newHighScore(Player) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testNewHighScore_1()
+		throws Exception {
+<span class="nc" id="L809">		Player player = PlayerFactory.createPlayer3();</span>
+
+<span class="nc" id="L811">		boolean result = HighScore.newHighScore(player);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: XML failure
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:824)
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:778)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:450)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer3(PlayerFactory.java:51)
+<span class="nc" id="L820">		assertTrue(result);</span>
+<span class="nc" id="L821">	}</span>
+
+	/**
+	 * Run the boolean newHighScore(Player) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testNewHighScore_2()
+		throws Exception {
+<span class="fc" id="L833">		Player player = PlayerFactory.createPlayer4();</span>
+
+<span class="nc" id="L835">		boolean result = HighScore.newHighScore(player);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.File.createNewFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.loadHighScores(HighScore.java:369)
+		//       at net.sf.freecol.common.model.HighScore.newHighScore(HighScore.java:351)
+<span class="nc" id="L844">		assertTrue(result);</span>
+<span class="nc" id="L845">	}</span>
+
+	/**
+	 * Run the boolean newHighScore(Player) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testNewHighScore_3()
+		throws Exception {
+<span class="nc" id="L857">		Player player = PlayerFactory.createPlayer5();</span>
+
+<span class="nc" id="L859">		boolean result = HighScore.newHighScore(player);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: Reader creation failure
+		//       at net.sf.freecol.common.networking.DOMMessage.makeElementReader(DOMMessage.java:802)
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:817)
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:778)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:450)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer5(PlayerFactory.java:71)
+<span class="nc" id="L869">		assertTrue(result);</span>
+<span class="nc" id="L870">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_1()
+		throws Exception {
+<span class="nc" id="L882">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L883">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L885">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L895">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_2()
+		throws Exception {
+<span class="nc" id="L907">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L908">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L910">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L921">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_3()
+		throws Exception {
+<span class="nc" id="L933">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L934">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L936">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L944">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_4()
+		throws Exception {
+<span class="fc" id="L956">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="nc" id="L957">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L959">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L965">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_5()
+		throws Exception {
+<span class="nc" id="L977">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L978">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L980">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L990">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_6()
+		throws Exception {
+<span class="nc" id="L1002">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L1003">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1005">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L1016">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_7()
+		throws Exception {
+<span class="nc" id="L1028">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L1029">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1031">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L1039">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_8()
+		throws Exception {
+<span class="fc" id="L1051">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="nc" id="L1052">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1054">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L1060">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_9()
+		throws Exception {
+<span class="nc" id="L1072">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L1073">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1075">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L1085">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_10()
+		throws Exception {
+<span class="nc" id="L1097">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L1098">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1100">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L1111">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_11()
+		throws Exception {
+<span class="nc" id="L1123">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L1124">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1126">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L1134">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_12()
+		throws Exception {
+<span class="fc" id="L1146">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="nc" id="L1147">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1149">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L1155">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_13()
+		throws Exception {
+<span class="nc" id="L1167">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L1168">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1170">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L1180">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_14()
+		throws Exception {
+<span class="nc" id="L1192">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L1193">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1195">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L1206">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_15()
+		throws Exception {
+<span class="nc" id="L1218">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L1219">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1221">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L1229">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testReadAttributes_16()
+		throws Exception {
+<span class="fc" id="L1241">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="nc" id="L1242">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L1244">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L1250">	}</span>
+
+	/**
+	 * Run the boolean saveHighScores(List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testSaveHighScores_1()
+		throws Exception {
+<span class="fc" id="L1262">		List&lt;HighScore&gt; scores = null;</span>
+
+<span class="fc" id="L1264">		boolean result = HighScore.saveHighScores(scores);</span>
+
+		// add additional test code here
+<span class="fc" id="L1267">		assertEquals(false, result);</span>
+<span class="fc" id="L1268">	}</span>
+
+	/**
+	 * Run the boolean saveHighScores(List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testSaveHighScores_2()
+		throws Exception {
+<span class="fc" id="L1280">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L1282">		boolean result = HighScore.saveHighScores(scores);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.saveHighScores(HighScore.java:412)
+<span class="fc" id="L1291">		assertTrue(result);</span>
+<span class="fc" id="L1292">	}</span>
+
+	/**
+	 * Run the boolean saveHighScores(List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testSaveHighScores_3()
+		throws Exception {
+<span class="fc" id="L1304">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L1306">		boolean result = HighScore.saveHighScores(scores);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.saveHighScores(HighScore.java:412)
+<span class="fc" id="L1315">		assertTrue(result);</span>
+<span class="fc" id="L1316">	}</span>
+
+	/**
+	 * Run the boolean saveHighScores(List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testSaveHighScores_4()
+		throws Exception {
+<span class="fc" id="L1328">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L1330">		boolean result = HighScore.saveHighScores(scores);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.saveHighScores(HighScore.java:412)
+<span class="fc" id="L1339">		assertTrue(result);</span>
+<span class="fc" id="L1340">	}</span>
+
+	/**
+	 * Run the boolean saveHighScores(List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testSaveHighScores_5()
+		throws Exception {
+<span class="fc" id="L1352">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L1354">		boolean result = HighScore.saveHighScores(scores);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.saveHighScores(HighScore.java:412)
+<span class="fc" id="L1363">		assertTrue(result);</span>
+<span class="fc" id="L1364">	}</span>
+
+	/**
+	 * Run the boolean saveHighScores(List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testSaveHighScores_6()
+		throws Exception {
+<span class="fc" id="L1376">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L1378">		boolean result = HighScore.saveHighScores(scores);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.saveHighScores(HighScore.java:412)
+<span class="fc" id="L1387">		assertTrue(result);</span>
+<span class="fc" id="L1388">	}</span>
+
+	/**
+	 * Run the boolean saveHighScores(List&lt;HighScore&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testSaveHighScores_7()
+		throws Exception {
+<span class="fc" id="L1400">		List&lt;HighScore&gt; scores = new LinkedList();</span>
+
+<span class="fc" id="L1402">		boolean result = HighScore.saveHighScores(scores);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.SecurityException: Cannot write to files while generating test cases
+		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at java.io.FileOutputStream.&lt;init&gt;(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScore.saveHighScores(HighScore.java:412)
+<span class="fc" id="L1411">		assertTrue(result);</span>
+<span class="fc" id="L1412">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_1()
+		throws Exception {
+<span class="nc" id="L1424">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L1425">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1427">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L1437">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_2()
+		throws Exception {
+<span class="nc" id="L1449">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L1450">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1452">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L1463">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_3()
+		throws Exception {
+<span class="nc" id="L1475">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L1476">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1478">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L1486">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_4()
+		throws Exception {
+<span class="fc" id="L1498">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="fc" id="L1499">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1501">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NullPointerException
+		//       at net.sf.freecol.common.model.HighScore.writeAttributes(HighScore.java:485)
+<span class="nc" id="L1507">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_5()
+		throws Exception {
+<span class="nc" id="L1519">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L1520">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1522">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L1532">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_6()
+		throws Exception {
+<span class="nc" id="L1544">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L1545">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1547">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L1558">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_7()
+		throws Exception {
+<span class="nc" id="L1570">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L1571">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1573">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L1581">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_8()
+		throws Exception {
+<span class="fc" id="L1593">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="fc" id="L1594">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1596">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NullPointerException
+		//       at net.sf.freecol.common.model.HighScore.writeAttributes(HighScore.java:485)
+<span class="nc" id="L1602">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_9()
+		throws Exception {
+<span class="nc" id="L1614">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L1615">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1617">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L1627">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_10()
+		throws Exception {
+<span class="nc" id="L1639">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L1640">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1642">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L1653">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_11()
+		throws Exception {
+<span class="nc" id="L1665">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L1666">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1668">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L1676">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_12()
+		throws Exception {
+<span class="fc" id="L1688">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="fc" id="L1689">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1691">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NullPointerException
+		//       at net.sf.freecol.common.model.HighScore.writeAttributes(HighScore.java:485)
+<span class="nc" id="L1697">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_13()
+		throws Exception {
+<span class="nc" id="L1709">		HighScore fixture = HighScoreFactory.createHighScore2();</span>
+<span class="nc" id="L1710">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1712">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalStateException: game.getNextId not implemented
+		//       at net.sf.freecol.common.model.Game.getNextId(Game.java:298)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:72)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:437)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer(PlayerFactory.java:31)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore2(HighScoreFactory.java:42)
+<span class="nc" id="L1722">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_14()
+		throws Exception {
+<span class="nc" id="L1734">		HighScore fixture = HighScoreFactory.createHighScore3();</span>
+<span class="nc" id="L1735">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1737">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Null/empty id.
+		//       at net.sf.freecol.common.model.Game.setFreeColGameObject(Game.java:350)
+		//       at net.sf.freecol.common.model.FreeColGameObject.internId(FreeColGameObject.java:134)
+		//       at net.sf.freecol.common.model.FreeColGameObject.&lt;init&gt;(FreeColGameObject.java:90)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:462)
+		//       at net.sf.freecol.common.model.PlayerFactory.createPlayer2(PlayerFactory.java:41)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore3(HighScoreFactory.java:52)
+<span class="nc" id="L1748">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_15()
+		throws Exception {
+<span class="nc" id="L1760">		HighScore fixture = HighScoreFactory.createHighScore4();</span>
+<span class="nc" id="L1761">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1763">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.IllegalArgumentException: Prefix string too short
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at java.io.File.createTempFile(Unknown Source)
+		//       at net.sf.freecol.common.model.HighScoreFactory.createHighScore4(HighScoreFactory.java:63)
+<span class="nc" id="L1771">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Test
+	public void testWriteAttributes_16()
+		throws Exception {
+<span class="fc" id="L1783">		HighScore fixture = HighScoreFactory.createHighScore();</span>
+<span class="fc" id="L1784">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L1786">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NullPointerException
+		//       at net.sf.freecol.common.model.HighScore.writeAttributes(HighScore.java:485)
+<span class="nc" id="L1792">	}</span>
+
+	/**
+	 * Perform pre-test initialization.
+	 *
+	 * @throws Exception
+	 *         if the initialization fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@Before
+	public void setUp()
+		throws Exception {
+		// add additional set up code here
+<span class="fc" id="L1806">	}</span>
+
+	/**
+	 * Perform post-test clean-up.
+	 *
+	 * @throws Exception
+	 *         if the clean-up fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	@After
+	public void tearDown()
+		throws Exception {
+		// Add additional tear down code here
+<span class="fc" id="L1820">	}</span>
+
+	/**
+	 * Launch the test.
+	 *
+	 * @param args the command line arguments
+	 *
+	 * @generatedBy CodePro at 5/16/16 11:13 PM
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L1830">		new org.junit.runner.JUnitCore().run(HighScoreTest.class);</span>
+<span class="nc" id="L1831">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TestAll (6) (May 17, 2016 2:04:14 AM)</div></body></html>

@@ -103,7 +103,7 @@ public final class Market extends FreeColGameObject implements Ownable {
 
 
     private void putMarketData(GoodsType goodsType, MarketData data) {
-        marketData.put(goodsType, data);
+        this.marketData.put(goodsType, data);
     }
 
     /**
@@ -142,7 +142,7 @@ public final class Market extends FreeColGameObject implements Ownable {
      * @return The corresponding <code>MarketData</code>, or null if none.
      */
     public MarketData getMarketData(GoodsType goodsType) {
-        return marketData.get(goodsType);
+        return this.marketData.get(goodsType);
     }
 
     /**
@@ -396,7 +396,7 @@ public final class Market extends FreeColGameObject implements Ownable {
                                    ? "model.market.priceIncrease"
                                    : "model.market.priceDecrease"),
                                this, goodsType)
-                .addStringTemplate("%market%", owner.getMarketName())
+                .addStringTemplate("%market%", this.owner.getMarketName())
                 .addNamed("%goods%", goodsType)
                 .addAmount("%buy%", newPrice)
                 .addAmount("%sell%", data.getPaidForSale());
@@ -434,7 +434,7 @@ public final class Market extends FreeColGameObject implements Ownable {
      * @param listener The <code>TransactionListener</code> to add.
      */
     public void addTransactionListener(TransactionListener listener) {
-        transactionListeners.add(listener);
+        this.transactionListeners.add(listener);
     }
 
     /**
@@ -443,7 +443,7 @@ public final class Market extends FreeColGameObject implements Ownable {
      * @param listener The <code>TransactionListener</code> to remove.
      */
     public void removeTransactionListener(TransactionListener listener) {
-        transactionListeners.remove(listener);
+        this.transactionListeners.remove(listener);
     }
 
     /**
@@ -453,7 +453,7 @@ public final class Market extends FreeColGameObject implements Ownable {
      *     added, or an empty array if none found.
      */
     public TransactionListener[] getTransactionListener() {
-        return transactionListeners.toArray(new TransactionListener[0]);
+        return this.transactionListeners.toArray(new TransactionListener[0]);
     }
 
 
@@ -466,7 +466,7 @@ public final class Market extends FreeColGameObject implements Ownable {
      */
     @Override
     public Player getOwner() {
-        return owner;
+        return this.owner;
     }
 
     /**
@@ -502,7 +502,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
         super.writeAttributes(xw);
 
-        xw.writeAttribute(OWNER_TAG, owner);
+        xw.writeAttribute(OWNER_TAG, this.owner);
     }
 
     /**
@@ -512,9 +512,9 @@ public final class Market extends FreeColGameObject implements Ownable {
     protected void writeChildren(FreeColXMLWriter xw) throws XMLStreamException {
         super.writeChildren(xw);
 
-        if (xw.validFor(owner)) {
+        if (xw.validFor(this.owner)) {
 
-            for (MarketData data : toSortedList(marketData.values())) {
+            for (MarketData data : toSortedList(this.marketData.values())) {
                 data.toXML(xw);
             }
         }
@@ -527,7 +527,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     protected void readAttributes(FreeColXMLReader xr) throws XMLStreamException {
         super.readAttributes(xr);
 
-        owner = xr.findFreeColGameObject(getGame(), OWNER_TAG,
+        this.owner = xr.findFreeColGameObject(getGame(), OWNER_TAG,
                                          Player.class, (Player)null, true);
     }
 
@@ -537,7 +537,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     @Override
     protected void readChildren(FreeColXMLReader xr) throws XMLStreamException {
         // Clear containers.
-        marketData.clear();
+        this.marketData.clear();
 
         super.readChildren(xr);
     }
@@ -566,8 +566,8 @@ public final class Market extends FreeColGameObject implements Ownable {
     public String toString() {
         StringBuilder sb = new StringBuilder(64);
         sb.append("[").append(getId())
-            .append(" owner=").append(owner.getId());
-        for (MarketData md : toSortedList(marketData.values())) {
+            .append(" owner=").append(this.owner.getId());
+        for (MarketData md : toSortedList(this.marketData.values())) {
             sb.append(" ").append(md);
         }
         sb.append("]");
@@ -578,7 +578,9 @@ public final class Market extends FreeColGameObject implements Ownable {
      * {@inheritDoc}
      */
     @Override
-    public String getXMLTagName() { return getTagName(); }
+    public String getXMLTagName() { 
+    	return getTagName(); 
+    	}
 
     /**
      * Gets the tag name of the root element representing this object.

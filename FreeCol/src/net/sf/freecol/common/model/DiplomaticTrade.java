@@ -530,7 +530,9 @@ public class DiplomaticTrade extends FreeColGameObject {
      * {@inheritDoc}
      */
     @Override
-    public String getXMLTagName() { return getTagName(); }
+    public String getXMLTagName() { 
+    	return getTagName(); 
+    	}
 
     /**
      * Gets the tag name of the root element representing this object.

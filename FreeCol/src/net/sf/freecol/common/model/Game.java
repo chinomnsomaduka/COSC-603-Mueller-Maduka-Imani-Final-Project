@@ -20,7 +20,6 @@
 package net.sf.freecol.common.model;
 
 import java.lang.ref.WeakReference;
-import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,10 +39,8 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.FreeColObject;
 import net.sf.freecol.common.model.NationOptions.NationState;
-import net.sf.freecol.common.networking.DOMMessage;
 import net.sf.freecol.common.option.OptionGroup;
 import net.sf.freecol.common.util.LogBuilder;
-import net.sf.freecol.common.util.Introspector;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 import net.sf.freecol.common.util.Utils;
@@ -384,7 +381,8 @@ public class Game extends FreeColGameObject {
 
         // Garbage collect the FCGOs if enough have been removed.
         if (++removeCount > REMOVE_GC_THRESHOLD) {
-            for (FreeColGameObject fcgo : getFreeColGameObjects());
+            for (@SuppressWarnings("unused") 
+            FreeColGameObject fcgo : getFreeColGameObjects());
             removeCount = 0;
             System.gc(); // Probably a good opportunity.
         }

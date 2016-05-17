@@ -66,8 +66,8 @@ public final class FeatureContainer {
      * @return True if the abilities are present.
      */
     private boolean abilitiesPresent() {
-        synchronized (abilitiesLock) {
-            return abilities != null;
+        synchronized (this.abilitiesLock) {
+            return this.abilities != null;
         }
     }
 
@@ -75,8 +75,8 @@ public final class FeatureContainer {
      * On demand creation of the abilities map.
      */
     private void requireAbilities() {
-        synchronized (abilitiesLock) {
-            if (abilities == null) abilities = new HashMap<>();
+        synchronized (this.abilitiesLock) {
+            if (this.abilities == null) abilities = new HashMap<>();
         }
     }
 
@@ -86,8 +86,8 @@ public final class FeatureContainer {
      * @return True if the modifiers are present.
      */
     private boolean modifiersPresent() {
-        synchronized (modifiersLock) {
-            return modifiers != null;
+        synchronized (this.modifiersLock) {
+            return this.modifiers != null;
         }
     }
 
@@ -95,8 +95,8 @@ public final class FeatureContainer {
      * On demand creation of the modifiers map.
      */
     private synchronized void requireModifiers() {
-        synchronized (modifiersLock) {
-            if (modifiers == null) modifiers = new HashMap<>();
+        synchronized (this.modifiersLock) {
+            if (this.modifiers == null) this.modifiers = new HashMap<>();
         }
     }
 
@@ -153,20 +153,20 @@ public final class FeatureContainer {
                                      Turn turn) {
         Set<Ability> result = new HashSet<>();
         if (abilitiesPresent()) {
-            synchronized (abilitiesLock) {
+            synchronized (this.abilitiesLock) {
                 if (id == null) {
-                    for (Set<Ability> aset : abilities.values()) {
+                    for (Set<Ability> aset : this.abilities.values()) {
                         result.addAll(aset);
                     }
                 } else {
-                    Set<Ability> aset = abilities.get(id);
+                    Set<Ability> aset = this.abilities.get(id);
                     if (aset != null) result.addAll(aset);
                 }
             }
             Iterator<Ability> it = result.iterator();
             while (it.hasNext()) {
-                Ability a = it.next();
-                if (!a.appliesTo(fcgot, turn)) it.remove();
+                Ability ability = it.next();
+                if (!ability.appliesTo(fcgot, turn)) it.remove();
             }
         }
         return result;
@@ -182,11 +182,11 @@ public final class FeatureContainer {
         if (ability == null) return false;
 
         requireAbilities();
-        synchronized (abilitiesLock) {
-            Set<Ability> abilitySet = abilities.get(ability.getId());
+        synchronized (this.abilitiesLock) {
+            Set<Ability> abilitySet = this.abilities.get(ability.getId());
             if (abilitySet == null) {
                 abilitySet = new HashSet<>();
-                abilities.put(ability.getId(), abilitySet);
+                this.abilities.put(ability.getId(), abilitySet);
             }
             return abilitySet.add(ability);
         }
@@ -201,8 +201,8 @@ public final class FeatureContainer {
     public Ability removeAbility(Ability ability) {
         if (ability == null || !abilitiesPresent()) return null;
 
-        synchronized (abilitiesLock) {
-            Set<Ability> abilitySet = abilities.get(ability.getId());
+        synchronized (this.abilitiesLock) {
+            Set<Ability> abilitySet = this.abilities.get(ability.getId());
             return (abilitySet == null
                 || !abilitySet.remove(ability)) ? null
                 : ability;
@@ -217,8 +217,8 @@ public final class FeatureContainer {
     public void removeAbilities(String id) {
         if (!abilitiesPresent()) return;
 
-        synchronized (abilitiesLock) {
-            abilities.remove(id);
+        synchronized (this.abilitiesLock) {
+            this.abilities.remove(id);
         }
     }
 
@@ -249,8 +249,8 @@ public final class FeatureContainer {
             }
             Iterator<Modifier> it = result.iterator();
             while (it.hasNext()) {
-                Modifier m = it.next();
-                if (!m.appliesTo(fcgot, turn)) it.remove();
+                Modifier modify = it.next();
+                if (!modify.appliesTo(fcgot, turn)) it.remove();
             }
         }
         return result;
@@ -350,14 +350,14 @@ public final class FeatureContainer {
      * @param fco The <code>FreeColObject</code> to add features from.
      */
     public void addFeatures(FreeColObject fco) {
-        FeatureContainer c = fco.getFeatureContainer();
-        if (c == null) return;
+        FeatureContainer contain = fco.getFeatureContainer();
+        if (contain == null) return;
 
-        if (c.abilitiesPresent()) {
+        if (contain.abilitiesPresent()) {
             requireAbilities();
             HashMap<String, Set<Ability>> ca;
-            synchronized (c.abilitiesLock) {
-                ca = new HashMap<>(c.abilities);
+            synchronized (contain.abilitiesLock) {
+                ca = new HashMap<>(contain.abilities);
             }
             synchronized (abilitiesLock) {
                 for (Entry<String, Set<Ability>> e : ca.entrySet()) {
@@ -371,11 +371,11 @@ public final class FeatureContainer {
             }
         }
 
-        if (c.modifiersPresent()) {
+        if (contain.modifiersPresent()) {
             requireModifiers();
             HashMap<String, Set<Modifier>> cm;
-            synchronized (c.modifiersLock) {
-                cm = new HashMap<>(c.modifiers);
+            synchronized (contain.modifiersLock) {
+                cm = new HashMap<>(contain.modifiers);
             }
             synchronized (modifiersLock) {
                 for (Entry<String, Set<Modifier>> e : cm.entrySet()) {
